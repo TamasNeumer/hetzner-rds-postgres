@@ -6,7 +6,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 
 RDS_INSTANCE_ID="instance1"
 
-GITHUB_OWNER="pellepelster"
+GITHUB_OWNER="tamasneumer"
 GITHUB_REPOSITORY="hetzner-rds-postgres"
 
 DOCKER_REGISTRY="docker.pkg.github.com"
@@ -206,13 +206,13 @@ function task_deploy {
 function task_set_github_access_token_rw {
   echo "Enter the Github personal read/write access token, followed by [ENTER]:"
   read -r github_access_token
-  echo ${github_access_token} | pass insert -m "${GITHUB_RW_TOKEN}"
+  echo ${github_access_token} | pass insert -m "${PASS_GITHUB_RW_TOKEN}"
 }
 
 function task_set_github_access_token_ro {
   echo "Enter the Github personal readonly access token, followed by [ENTER]:"
   read -r github_access_token
-  echo ${github_access_token} | pass insert -m "${GITHUB_RO_TOKEN}"
+  echo ${github_access_token} | pass insert -m "${PASS_GITHUB_RO_TOKEN}"
 }
 
 function task_set_cloud_api_token {
